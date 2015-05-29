@@ -117,7 +117,7 @@ def authorize_google(client_id, client_secret, redirect_uri, state):
     session['state'] = state
     
     query_string = urlencode(dict(client_id=client_id, redirect_uri=redirect_uri,
-                                  scope='profile', state=state, response_type='code',
+                                  scope='https://spreadsheets.google.com/feeds/', state=state, response_type='code',
                                   access_type='offline', approval_prompt='force'))
     
     return redirect(google_authorize_url + '?' + query_string)
